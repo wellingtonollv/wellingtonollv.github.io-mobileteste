@@ -1,2 +1,2 @@
 # mobileteste
-HTML and Css responsive site with Echarts to plot data
+HTML and SCSS responsive site with Echarts to plot data
