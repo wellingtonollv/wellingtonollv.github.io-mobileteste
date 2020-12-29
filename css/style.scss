@@ -16,6 +16,9 @@ $textcolor:#fff;
   box-sizing: border-box;
 }
 
+html{
+  height: 100%;
+}
 header {
   h1 {
     color: $maincolor;
@@ -103,19 +106,18 @@ nav {
 
 
 .main {
-
-  img {
+  #banner{
     width: 100%;
     height: 319px;
     object-fit: cover;
     position: absolute;
   }
 
-  div {
+  #banner-text {
     position: relative;
     color: $textcolor;
     max-width: 360px;
-    padding: 140px 0 30px 30px;
+    padding: 140px 0 55px 30px;
 
     h1 {
       font-size: 25px;
@@ -129,6 +131,32 @@ nav {
     }
   }
 }
+
+/*---------------GRAPHS------------------*/
+#container{
+  width:50%;
+  height:100%;
+}
+#flex{
+  width:100%;
+  height:250px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-top:30px;
+}
+canvas{
+  background-color: #f1f1f1;
+}
+
+#texto-grafico{
+  width: 50%;
+  justify-content: space-around;
+  background-color: #f1f1f1;
+}
+
+
 
 /*---------------MEDIAS-------------------*/
 @media (max-width: 600px) {

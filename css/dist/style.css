@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 header h1 {
   color: orange;
   font-size: 25px;
@@ -82,25 +86,51 @@ nav .nav-list a:hover {
 }
 
 /*----------------MAIN CONTENT--------------------*/
-.main img {
+.main #banner {
   width: 100%;
   height: 319px;
   object-fit: cover;
   position: absolute;
 }
-.main div {
+.main #banner-text {
   position: relative;
   color: #fff;
   max-width: 360px;
-  padding: 140px 0 30px 30px;
+  padding: 140px 0 55px 30px;
 }
-.main div h1 {
+.main #banner-text h1 {
   font-size: 25px;
   font-weight: normal;
 }
-.main div p {
+.main #banner-text p {
   font-size: 16px;
   font-weight: lighter;
+}
+
+/*---------------GRAPHS------------------*/
+#container {
+  width: 50%;
+  height: 100%;
+}
+
+#flex {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-top: 30px;
+}
+
+canvas {
+  background-color: #f1f1f1;
+}
+
+#texto-grafico {
+  width: 50%;
+  justify-content: space-around;
+  background-color: #f1f1f1;
 }
 
 /*---------------MEDIAS-------------------*/

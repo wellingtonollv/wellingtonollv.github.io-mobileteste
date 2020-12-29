@@ -4,10 +4,14 @@
 <head>
     <!--CSS-->
     <link rel="stylesheet" href="css/style.css">
+
     <!--FONTES-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
         rel="stylesheet">
+    <!--JAVASCRIPT-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@4/dist/echarts.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@1/dist/echarts-gl.min.js"></script>
 
     <title>Meu App</title>
     <meta charset="utf-8" />
@@ -31,11 +35,11 @@
                 <li><a href="#">Menu item 3</a></li>
             </ul>
         </nav>
-        
-        <section class="main">
-            <img src="images/bg.png">
 
-            <div>
+        <section class="main">
+            <img id="banner" src="images/bg.png">
+
+            <div id="banner-text">
                 <h1>Lorem Ipsum</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Mauris a orci eget nulla interdum aliquam quis a purus.
@@ -45,7 +49,20 @@
             </div>
 
         </section>
+
+        <div id="flex">
+            <div id="container"></div>
+            <script type="text/javascript" src="js/echarts.js"></script>
     
+            <div id="texto-grafico">
+                <p>Vendas em 2020</p>
+                <h1><b>R$ 412,1 </b>Milhões</h1>
+    
+                <p>Vendas em 2019</p>
+                <h1><b>R$ 356,6 </b>Milhões</h1>
+            </div>
+        </div>
+
 
     </section>
 </body>
