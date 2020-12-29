@@ -189,7 +189,7 @@ canvas {
 }
 
 /*---------------MEDIAS-------------------*/
-@media (max-width: 600px) {
+@media (max-width: 740px) {
   .nav-list {
     position: fixed;
     top: 0;
@@ -258,10 +258,14 @@ canvas {
             transform: rotate(-45deg);
   }
   #texto-grafico {
+    width: 100%;
     margin-top: 20px;
   }
   #texto-grafico h1 {
     font-size: 30px;
+  }
+  #container {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style.css.map */
