@@ -108,13 +108,7 @@ nav .nav-list a:hover {
 }
 
 /*---------------GRAPHS------------------*/
-#container {
-  width: 50%;
-  height: 100%;
-}
-
 #flex {
-  width: 100%;
   height: 250px;
   display: flex;
   flex-wrap: wrap;
@@ -123,13 +117,22 @@ nav .nav-list a:hover {
   margin-top: 30px;
 }
 
-canvas {
-  background-color: #f1f1f1;
+#container {
+  max-width: 600px;
+  min-width: 320px;
+  height: 250px;
 }
 
 #texto-grafico {
-  width: 50%;
+  max-width: 600px;
+  min-width: 320px;
+  padding: 30px;
+  height: 100%;
   justify-content: space-around;
+  background-color: #f1f1f1;
+}
+
+canvas {
   background-color: #f1f1f1;
 }
 
@@ -182,5 +185,9 @@ canvas {
   }
   #hamburger-toggle:checked ~ .hamburger .bar::after {
     transform: rotate(-45deg);
+  }
+
+  #texto-grafico {
+    margin-top: 20px;
   }
 }

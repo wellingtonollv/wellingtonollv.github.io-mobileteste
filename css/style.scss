@@ -133,30 +133,46 @@ nav {
 }
 
 /*---------------GRAPHS------------------*/
-#container{
-  width:50%;
-  height:100%;
-}
 #flex{
-  width:100%;
   height:250px;
   display:flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
-  margin-top:30px;
+  margin:30px 0px 30px 0px;
 }
-canvas{
-  background-color: #f1f1f1;
+#container{
+  width:49%;
+  min-width: 320px;
+  height:250px;
+  
 }
-
 #texto-grafico{
-  width: 50%;
+  width: 49%;
+  min-width: 320px;
+  padding:54px 50px 30px 50px;
+  height: 100%;
   justify-content: space-around;
   background-color: #f1f1f1;
+  h1{
+    margin-bottom: 20px;
+    color:#FF7800;
+    font-size:38px;
+  }
+  #millions{
+    font-weight: 400;
+  }
+  
 }
 
-
+#container div{
+  width: 100%!important;
+  min-width: 320px;
+}
+canvas{
+  width:100%!important;
+  background-color: #f1f1f1;
+}
 
 /*---------------MEDIAS-------------------*/
 @media (max-width: 600px) {
@@ -207,10 +223,18 @@ canvas{
       transform: rotate(45deg);
     }
     &:checked~.hamburger .bar {
+      position: fixed;
       background-color: transparent;
     }
     &:checked~.hamburger .bar::after {
       transform: rotate(-45deg);
     }
+  }
+  #texto-grafico{
+    margin-top:20px;
+    h1{
+      font-size: 30px;
+    }
+   
   }
 }
