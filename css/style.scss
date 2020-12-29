@@ -25,103 +25,76 @@ header {
   }
 }
 
-/*--------------------------------------header menu */
-
-.header {
-  background-color: $maincolor;
-  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+/*--------------------------------------header menu bar*/
+nav {
+  padding: 20px 0px 20px 0px;
+  background-color:$maincolor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 30px;
-  width: 100%;
-  z-index: 3;
+  z-index: 99;
 
-  ul {
-    margin: 0;
-    padding: 0;
+  .nav-list {
+    display: flex;
     list-style: none;
-    overflow: hidden;
-    background-color: $maincolor;
-  }
 
-  li a {
-    display: block;
-    padding: 10px 0px 10px 30px;
-    text-decoration: none;
-    color: $textcolor;
-    font-size:16px;
-    font-weight: lighter;
+    li {
+      margin-left: 30px;
+    }
 
-    &:hover {
-      color: yellow;
+    a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: lighter;
+      color:$textcolor;
+
+      &:hover{
+        color:yellow;
+      }
+
     }
   }
+}
 
-  .menu {
-    clear: both;
-    max-height: 0;
-    transition: max-height 0.2s ease-out;
-  }
 
-  .menu-icon {
-    cursor: pointer;
+#hamburger-toggle {
+  display: none;
+}
+
+.hamburger {
+  width: 30px;
+  height: 30px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+
+  .bar {
     display: inline-block;
-
-    padding: 17px 30px;
-    position: relative;
-    user-select: none;
-  }
-
-  .navicon {
-
-    background: $textcolor;
-    display: block;
+    width: 30px;
     height: 2px;
+    background-color:$textcolor;
     position: relative;
-    transition: background 0.2s ease-out;
-    width: 18px;
+    transition: all 0.3s;
 
     &:before,
     &:after {
-      background: $textcolor;
       content: "";
-      display: block;
-      height: 100%;
       position: absolute;
-      transition: all 0.2s ease-out;
       width: 100%;
+      height: 100%;
+      background-color: #fff;
+      transition: all 0.3s;
     }
 
     &:before {
-      top: 5px;
+      transform: translateY(-10px);
     }
 
     &:after {
-      top: -5px;
-    }
-
-  }
-
-  .menu-btn {
-    display: none;
-
-    &:checked~.menu {
-      max-height: 240px;
-    }
-
-    &:checked~.menu-icon .navicon {
-      background: transparent;
-    }
-
-    &:checked~.menu-icon .navicon:before {
-      transform: rotate(-45deg);
-    }
-
-    &:checked~.menu-icon .navicon:after {
-      transform: rotate(45deg);
-    }
-
-    &:checked~.menu-icon:not(.steps) .navicon:before,
-    &:checked~.menu-icon:not(.steps) .navicon:after {
-      top: 0;
+      transform: translateY(10px);
     }
   }
 }
@@ -130,11 +103,10 @@ header {
 
 
 .main {
-    
 
   img {
-    width:100%;
-    height: 319px;   
+    width: 100%;
+    height: 319px;
     object-fit: cover;
     position: absolute;
   }
@@ -144,13 +116,14 @@ header {
     color: $textcolor;
     max-width: 360px;
     padding: 140px 0 30px 30px;
-    
+
     h1 {
       font-size: 25px;
       font-weight: normal;
     }
+
     p {
-      font-size:16px;
+      font-size: 16px;
       font-weight: lighter;
 
     }
@@ -158,26 +131,58 @@ header {
 }
 
 /*---------------MEDIAS-------------------*/
+@media (max-width: 600px) {
 
-@media (min-width: 480px) {
-  .header {
+  .nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    z-index: 99;
+
     li {
-      float: left;
-    }
+      margin: 10px 0 10px 0;
 
-    a {
-      padding: 10px 0px 10px 30px;
-    }
+      a {
+        display: inline-block;
+        font-size: 20px;
+        padding: 15px 20px;
+        transition: all 0.3s;
 
-    .menu {
-      clear: none;
-      max-height: none;
-    }
-
-    .menu-icon {
-      display: none;
+        &:hover {
+          background-color:$textcolor;
+          color: #000;
+          transform: translateY(-10px);
+        }
+      }
     }
   }
-  
-
+  .hamburger {
+    display: flex;
+    z-index: 999;
+    margin-left: 30px;
+  }
+  #hamburger-toggle{
+    &:checked~.nav-list {
+      transform: none;
+    }
+    &:checked~.hamburger .bar::before {
+      transform: rotate(45deg);
+    }
+    &:checked~.hamburger .bar {
+      background-color: transparent;
+    }
+    &:checked~.hamburger .bar::after {
+      transform: rotate(-45deg);
+    }
+  }
 }
